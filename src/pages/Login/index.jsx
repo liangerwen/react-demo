@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Input, Button, Form, message } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { params } from "./particles.config";
-import { withRouter } from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 import Particles from "react-particles-js";
-import "./index.css";
+import "./index.less";
 
 class Login extends Component {
   state = { user: { username: "", password: "" } };
@@ -14,6 +14,7 @@ class Login extends Component {
       user: { username: e.target.value, password: this.state.user.password },
     });
   };
+
   changePassword = (e) => {
     this.setState({
       user: { username: this.state.user.username, password: e.target.value },
@@ -21,9 +22,9 @@ class Login extends Component {
   };
   Submit = async () => {
     try {
-      const values = await this.formRef.current.validateFields();
-      console.log(this.props)
-      if (values.username === "123456" && values.password === "123123")
+      const user = await this.formRef.current.validateFields();
+      console.log(this.props);
+      if (user.username === "123456" && user.password === "123123")
         this.props.history.push("/home");
       else message.error("账号或密码错误！");
     } catch {}

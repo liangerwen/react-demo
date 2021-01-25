@@ -1,0 +1,44 @@
+#login-body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(40, 86, 172);
+  #tsparticles {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  #login-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    #form-title {
+      width: 100%;
+      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+      font-size: 44px;
+    }
+    .user-input {
+      color: #fff;
+      background-color: transparent;
+      .ant-input {
+        color: #fff;
+        background-color: transparent;
+      }
+      .ant-input-password-icon {
+        color: #fff;
+      }
+    }
+  }
+}
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+  caret-color: #fff;
+}
